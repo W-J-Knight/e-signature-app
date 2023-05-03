@@ -3,8 +3,8 @@ import Title from "../components/Title";
 
 export default function Home() {
 
-  const [name, setName] = useState("Your Signature")
-  const [date, setDate] = useState("Select DATE")
+  const [name, setName] = useState("")
+  const [date, setDate] = useState("")
   const handleNameChange = (e) => {
     // console.log(e.target.value)
     setName(previousName => previousName = e.target.value);
@@ -24,8 +24,12 @@ export default function Home() {
   return (
     <div className="container text-center text-uppercase">
       {/* <Title classes={"title"} text={"Name"} /> */}
-      <Title classes={"title"} text={name} />
-      <Title classes={"main-title mb-4"} text={date} />
+      <Title classes={"title"} text={name} placeholder="Your Signature" />
+      <Title
+        classes={"main-title mb-4"}
+        text={date}
+        placeholder="Date"
+      />
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
         voluptatum voluptatem laudantium nobis illo obcaecati, minima incidunt
@@ -51,6 +55,7 @@ export default function Home() {
           value={name}
           style={inputStyle}
           onChange={handleNameChange}
+          placeholder="Your Signature"
         />
       </footer>
     </div>
